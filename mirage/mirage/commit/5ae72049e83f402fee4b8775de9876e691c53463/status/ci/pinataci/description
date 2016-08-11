@@ -1,1 +1,7 @@
-Building container 1a86cf8d85f4677b0f89f272a12178bd
+OK (debian-stable/4.02.3=TODO)
+OK (debian-testing/4.03.0=TODO)
+OK (ubuntu-16.04/4.02.3=TODO)
+ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-12fa99c8/Dockerfile" exited with status 4)
+OK (fedora-24/4.03.0=TODO)
+OK (centos-7/4.03.0=TODO)
+OK (alpine-3.4/4.03.0=TODO)
