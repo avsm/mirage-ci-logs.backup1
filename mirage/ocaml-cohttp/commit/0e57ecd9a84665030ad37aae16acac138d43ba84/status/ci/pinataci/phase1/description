@@ -1,1 +1,1 @@
-ERR (debian-stable/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-2eae1ae9/Dockerfile" exited with status 4)
+Building container d5d46c65655d3a17eec4bb5a2c081524
