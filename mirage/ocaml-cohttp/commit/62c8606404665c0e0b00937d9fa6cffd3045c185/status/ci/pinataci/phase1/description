@@ -1,0 +1,1 @@
+ERR (debian-stable/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-38f5b269/Dockerfile" exited with status 4)
