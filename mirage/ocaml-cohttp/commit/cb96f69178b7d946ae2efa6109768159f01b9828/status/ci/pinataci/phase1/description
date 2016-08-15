@@ -1,1 +1,1 @@
-Building container 4270a7f8061155d808bc8fc5a400292e
+ERR (debian-stable/4.03.0=Command "sh" "-c" "docker build -t opamci:4270a7f8061155d808bc8fc5a400292e --no-cache --rm --force-rm --pull - < /tmp/tmp-6fa8a77/Dockerfile" exited with status 4)
