@@ -1,0 +1,7 @@
+ERR (debian-stable/4.02.3=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-3fb9c40c/Dockerfile" exited with status 3)
+ERR (debian-testing/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-2543a9fb/Dockerfile" exited with status 3)
+ERR (ubuntu-16.04/4.02.3=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-25476c42/Dockerfile" exited with status 3)
+ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-3850d62c/Dockerfile" exited with status 3)
+ERR (fedora-24/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-206bf349/Dockerfile" exited with status 3)
+ERR (centos-7/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-1df15243/Dockerfile" exited with status 3)
+ERR (alpine-3.4/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-a5a587c/Dockerfile" exited with status 3)
