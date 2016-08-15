@@ -1,1 +1,7 @@
-Building container bc5aeec7361f0567699f9bcbd7afcca9
+ERR (debian-stable/4.02.3=Command "sh" "-c" "docker build -t opamci:bc5aeec7361f0567699f9bcbd7afcca9 --no-cache --rm --force-rm --pull - < /tmp/tmp-24b909fd/Dockerfile" exited with status 4)
+ERR (debian-testing/4.03.0=Command "sh" "-c" "docker build -t opamci:84a1ecba40a91202112e40cfb12325d3 --no-cache --rm --force-rm --pull - < /tmp/tmp-1134735f/Dockerfile" exited with status 4)
+ERR (ubuntu-16.04/4.02.3=Command "sh" "-c" "docker build -t opamci:20104d287ffd304daed79e0bbc46c1e8 --no-cache --rm --force-rm --pull - < /tmp/tmp-30422c7f/Dockerfile" exited with status 4)
+ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build -t opamci:9a8b1e04e99abf3f0a0011e12a690362 --no-cache --rm --force-rm --pull - < /tmp/tmp-d8073eb/Dockerfile" exited with status 4)
+ERR (fedora-24/4.03.0=Command "sh" "-c" "docker build -t opamci:b48e236f812595b28c7828b180701485 --no-cache --rm --force-rm --pull - < /tmp/tmp-320573a2/Dockerfile" exited with status 4)
+ERR (centos-7/4.03.0=Command "sh" "-c" "docker build -t opamci:3308174e80a50c55100ed1f14609146e --no-cache --rm --force-rm --pull - < /tmp/tmp-4dd68e4/Dockerfile" exited with status 4)
+ERR (alpine-3.4/4.03.0=Command "sh" "-c" "docker build -t opamci:90cbdab1eba5107da6185b1638a6b8c1 --no-cache --rm --force-rm --pull - < /tmp/tmp-2214c8fd/Dockerfile" exited with status 4)
