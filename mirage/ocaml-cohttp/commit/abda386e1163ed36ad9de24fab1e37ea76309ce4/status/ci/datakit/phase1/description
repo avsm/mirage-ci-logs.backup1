@@ -1,1 +1,1 @@
-Building container c605ce2f21b5c4cc26024798f088e264
+ERR (debian-stable/4.03.0=Command "sh" "-c" "docker build --label com.docker.datakit.digest=c605ce2f21b5c4cc26024798f088e264 --label com.docker.datakit.builton=1471430345.2 -t opamci:c605ce2f21b5c4cc26024798f088e264 --no-cache --rm --force-rm --pull - < /tmp/tmp-6c59297/Dockerfile" exited with status 1)
