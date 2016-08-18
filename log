@@ -1,0 +1,45 @@
+=== Building container 174f5a82d4f7441ee0b0c3cb220981c4
+[2016-08-18 10:57.13] Starting...
+[2016-08-18 10:57.13] Waiting for free pool slot to build 174f5a82d4f7441ee0b0c3cb220981c4
+[2016-08-18 10:57.13] Pool slot obtained, starting build of 174f5a82d4f7441ee0b0c3cb220981c4
+[2016-08-18 10:57.13] Building container for 174f5a82d4f7441ee0b0c3cb220981c4
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:debian-stable_ocaml-4.02.3
+debian-stable_ocaml-4.02.3: Pulling from ocaml/opam
+28c297c6ec72: Pulling fs layer
+a3ed95caeb02: Pulling fs layer
+d3a2cca92131: Pulling fs layer
+318d03bd0513: Pulling fs layer
+925af5bb18f0: Pulling fs layer
+318d03bd0513: Waiting
+925af5bb18f0: Waiting
+a3ed95caeb02: Download complete
+28c297c6ec72: Verifying Checksum
+28c297c6ec72: Download complete
+28c297c6ec72: Pull complete
+a3ed95caeb02: Pull complete
+d3a2cca92131: Verifying Checksum
+d3a2cca92131: Download complete
+318d03bd0513: Verifying Checksum
+318d03bd0513: Download complete
+d3a2cca92131: Pull complete
+318d03bd0513: Pull complete
+925af5bb18f0: Verifying Checksum
+925af5bb18f0: Pull complete
+Digest: sha256:34f0bd60d44846bb44dfd306b7852980a156808fb9864d4fac5d79250510184f
+Status: Image is up to date for ocaml/opam:debian-stable_ocaml-4.02.3
+ ---> a4db95fb2b4d
+Step 2 : RUN git clone git://github.com/mirage/ocaml-cohttp /home/opam/src
+ ---> Running in 5c136450cc14
+[91mCloning into '/home/opam/src'...
+[0m ---> 4a275d210771
+Removing intermediate container 5c136450cc14
+Step 3 : WORKDIR /home/opam/src
+ ---> Running in 63dff6e09982
+ ---> f935b627e6f0
+Removing intermediate container 63dff6e09982
+Step 4 : RUN git fetch origin pull/293/head:cibranch &&   git checkout cibranch &&   cat /etc/os-release || true &&   opam pin add -n cohttp /home/opam/src &&   opam depext -uy cohttp &&   opam install -j 2 -vy cohttp
+ ---> Running in 592f4e7df8d1
+Removing intermediate container 592f4e7df8d1
+error creating zfs mount of zpool-docker/docker/1d1062e86da1c327ee0369ac52cbb16f26892297b0c45e1784d427092d594072 to /var/lib/docker/zfs/graph/1d1062e86da1c327ee0369ac52cbb16f26892297b0c45e1784d427092d594072: device or resource busy
+[2016-08-18 11:00.16] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=174f5a82d4f7441ee0b0c3cb220981c4 --label com.docker.datakit.builton=1471517833.32 -t opamci:174f5a82d4f7441ee0b0c3cb220981c4 --no-cache --rm --force-rm --pull - < /tmp/tmp-23210927/Dockerfile" exited with status 1
