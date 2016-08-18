@@ -1,0 +1,740 @@
+=== Building container bfc025aa8534a5e91eac1dd36f1ef422
+[2016-08-18 14:29.00] Starting...
+[2016-08-18 14:29.00] Waiting for free pool slot to build bfc025aa8534a5e91eac1dd36f1ef422
+[2016-08-18 15:18.01] Pool slot obtained, starting build of bfc025aa8534a5e91eac1dd36f1ef422
+[2016-08-18 15:18.01] Building container for bfc025aa8534a5e91eac1dd36f1ef422
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:fedora-24_ocaml-4.03.0
+fedora-24_ocaml-4.03.0: Pulling from ocaml/opam
+Digest: sha256:9e3c19fa6493ae25a7013a8332e832d2567bdb24ec11eebf0e5531821e4d8680
+Status: Image is up to date for ocaml/opam:fedora-24_ocaml-4.03.0
+ ---> cafdb62f2d51
+Step 2 : RUN git clone git://github.com/mirage/mirage /home/opam/src
+ ---> Running in 727f41aa3af5
+[91mCloning into '/home/opam/src'...
+[0m ---> dfd27d7dff8c
+Removing intermediate container 727f41aa3af5
+Step 3 : WORKDIR /home/opam/src
+ ---> Running in bc00eaf41524
+ ---> 7930c87a488e
+Removing intermediate container bc00eaf41524
+Step 4 : RUN git fetch origin pull/558/head:cibranch &&   git checkout 9f190fe4dd30c9aa6a09eb60f1cb3ede752806fa &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage
+ ---> Running in 657648a1765c
+[91mFrom git://github.com/mirage/mirage
+ * [new ref]         refs/pull/558/head -> cibranch
+[0m[91mNote: checking out '9f190fe4dd30c9aa6a09eb60f1cb3ede752806fa'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 9f190fe... fix opam
+[0mmirage is now path-pinned to /home/opam/src
+
+[mirage: local]
+[mirage] /home/opam/src/ synchronized
+[mirage] Installing new package description from /home/opam/src
+
+# Detecting depexts using flags: x86_64 linux fedora
+# The following system packages are needed:
+#  - m4
+package m4 is not installed
+The following command needs to be run through "sudo":
+    yum -y update
+[91mYum command has been deprecated, redirecting to '/usr/bin/dnf -y update'.
+See 'man dnf' and 'man yum2dnf' for more information.
+To transfer transaction metadata from yum to DNF, run:
+'dnf install python-dnf-plugins-extras-migrate && dnf-2 migrate'
+
+[0mLast metadata expiration check: 0:00:09 ago on Thu Aug 18 15:23:25 2016.
+Dependencies resolved.
+================================================================================
+ Package                  Arch       Version                  Repository   Size
+================================================================================
+Installing:
+ kernel-debug-devel       x86_64     4.6.6-300.fc24           updates      11 M
+ nss-pem                  x86_64     1.0.2-2.fc24             updates      76 k
+Upgrading:
+ audit-libs               x86_64     2.6.6-1.fc24             updates      97 k
+ avahi-libs               x86_64     0.6.32-4.fc24            updates      61 k
+ bash-completion          noarch     1:2.4-1.fc24             updates     269 k
+ ca-certificates          noarch     2016.2.8-1.0.fc24        updates     438 k
+ chkconfig                x86_64     1.8-1.fc24               updates     179 k
+ coreutils                x86_64     8.25-6.fc24              updates     1.1 M
+ coreutils-common         x86_64     8.25-6.fc24              updates     1.9 M
+ cpp                      x86_64     6.1.1-3.fc24             updates     9.0 M
+ cryptsetup-libs          x86_64     1.7.2-1.fc24             updates     220 k
+ curl                     x86_64     7.47.1-6.fc24            updates     294 k
+ dbus                     x86_64     1:1.11.4-1.fc24          updates     244 k
+ dbus-libs                x86_64     1:1.11.4-1.fc24          updates     173 k
+ device-mapper            x86_64     1.02.122-2.fc24          updates     308 k
+ device-mapper-libs       x86_64     1.02.122-2.fc24          updates     364 k
+ emacs-filesystem         noarch     1:25.1-0.2.rc1.fc24      updates      66 k
+ expat                    x86_64     2.1.1-2.fc24             updates      88 k
+ fedora-release           noarch     24-2                     updates      30 k
+ fedora-repos             noarch     24-3                     updates      87 k
+ gcc                      x86_64     6.1.1-3.fc24             updates      20 M
+ gettext                  x86_64     0.19.8.1-2.fc24          updates     1.0 M
+ gettext-libs             x86_64     0.19.8.1-2.fc24          updates     506 k
+ glibc                    x86_64     2.23.1-8.fc24            updates     3.6 M
+ glibc-all-langpacks      x86_64     2.23.1-8.fc24            updates     6.9 M
+ glibc-common             x86_64     2.23.1-8.fc24            updates     861 k
+ glibc-devel              x86_64     2.23.1-8.fc24            updates     935 k
+ glibc-headers            x86_64     2.23.1-8.fc24            updates     500 k
+ gmp                      x86_64     1:6.1.1-1.fc24           updates     315 k
+ gnupg2                   x86_64     2.1.13-1.fc24            updates     1.9 M
+ gnutls                   x86_64     3.4.14-1.fc24            updates     659 k
+ gpgme                    x86_64     1.6.0-3.fc24             updates     171 k
+ info                     x86_64     6.1-3.fc24               updates     191 k
+ kernel-headers           x86_64     4.6.6-300.fc24           updates     1.0 M
+ krb5-libs                x86_64     1.14.3-4.fc24            updates     738 k
+ libarchive               x86_64     3.2.1-3.fc24             updates     343 k
+ libassuan                x86_64     2.4.3-1.fc24             updates      76 k
+ libblkid                 x86_64     2.28-3.fc24              updates     180 k
+ libcap-ng                x86_64     0.7.8-1.fc24             updates      30 k
+ libcurl                  x86_64     7.47.1-6.fc24            updates     259 k
+ libfdisk                 x86_64     2.28-3.fc24              updates     221 k
+ libgcc                   x86_64     6.1.1-3.fc24             updates      83 k
+ libgcrypt                x86_64     1.6.5-1.fc24             updates     376 k
+ libgomp                  x86_64     6.1.1-3.fc24             updates     185 k
+ libgpg-error             x86_64     1.24-1.fc24              updates     158 k
+ libidn                   x86_64     1.33-1.fc24              updates     233 k
+ libmnl                   x86_64     1.0.4-1.fc24             updates      28 k
+ libmount                 x86_64     2.28-3.fc24              updates     198 k
+ libreport-filesystem     x86_64     2.7.2-1.fc24             updates      48 k
+ libselinux               x86_64     2.5-9.fc24               updates     163 k
+ libsemanage              x86_64     2.5-5.fc24               updates     149 k
+ libsepol                 x86_64     2.5-8.fc24               updates     294 k
+ libsmartcols             x86_64     2.28-3.fc24              updates     141 k
+ libsolv                  x86_64     0.6.23-2.fc24            updates     338 k
+ libsss_idmap             x86_64     1.13.4-4.fc24            updates      81 k
+ libsss_nss_idmap         x86_64     1.13.4-4.fc24            updates      78 k
+ libstdc++                x86_64     6.1.1-3.fc24             updates     427 k
+ libtasn1                 x86_64     4.8-2.fc24               updates     326 k
+ libuuid                  x86_64     2.28-3.fc24              updates      80 k
+ libxkbcommon             x86_64     0.6.1-1.fc24             updates     112 k
+ lua                      x86_64     5.3.3-2.fc24             updates     297 k
+ ncurses                  x86_64     6.0-6.20160709.fc24      updates     341 k
+ ncurses-base             noarch     6.0-6.20160709.fc24      updates      78 k
+ ncurses-libs             x86_64     6.0-6.20160709.fc24      updates     297 k
+ nettle                   x86_64     3.2-3.fc24               updates     305 k
+ nss                      x86_64     3.25.0-1.2.fc24          updates     844 k
+ nss-softokn              x86_64     3.25.0-1.0.fc24          updates     313 k
+ nss-softokn-freebl       x86_64     3.25.0-1.0.fc24          updates     222 k
+ nss-sysinit              x86_64     3.25.0-1.2.fc24          updates      58 k
+ nss-tools                x86_64     3.25.0-1.2.fc24          updates     496 k
+ nss-util                 x86_64     3.25.0-1.0.fc24          updates      82 k
+ openssh                  x86_64     7.2p2-12.fc24            updates     443 k
+ openssh-clients          x86_64     7.2p2-12.fc24            updates     662 k
+ openssl-libs             x86_64     1:1.0.2h-3.fc24          updates     1.2 M
+ pcre                     x86_64     8.39-2.fc24              updates     404 k
+ perl-Socket              x86_64     3:2.024-1.fc24           updates      56 k
+ python3                  x86_64     3.5.1-13.fc24            updates      56 k
+ python3-libs             x86_64     3.5.1-13.fc24            updates     1.4 M
+ python3-pygpgme          x86_64     0.3-18.fc24              updates      90 k
+ sqlite-libs              x86_64     3.13.0-1.fc24            updates     452 k
+ sssd-client              x86_64     1.13.4-4.fc24            updates     136 k
+ system-python-libs       x86_64     3.5.1-13.fc24            updates     6.0 M
+ systemd                  x86_64     229-12.fc24              updates     5.1 M
+ systemd-libs             x86_64     229-12.fc24              updates     457 k
+ tzdata                   noarch     2016f-1.fc24             updates     414 k
+ util-linux               x86_64     2.28-3.fc24              updates     2.2 M
+ vim-minimal              x86_64     2:7.4.1868-1.fc24        updates     505 k
+
+Transaction Summary
+================================================================================
+Install   2 Packages
+Upgrade  85 Packages
+
+Total download size: 92 M
+Downloading Packages:
+[91m/usr/share/locale/ar/LC_MESSAGES/chkconfig.mo: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/coreutils-common/ABOUT-NLS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/man/man5/libaudit.conf.5.gz: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/man/man8/ca-legacy.8.gz: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/bash-completion/AUTHORS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/locale/cs/LC_MESSAGES/cryptsetup.mo: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/curl/BUGS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libassuan/AUTHORS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/gmp/NEWS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libblkid/COPYING: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/gnutls/AUTHORS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/locale/nl/LC_MESSAGES/libgpg-error.mo: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libmnl/README: No such file or directory
+cannot reconstruct rpm from disk files
+/usr/share/locale/en@boldquot/LC_MESSAGES/libidn.mo: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libgcrypt/AUTHORS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libtasn1/AUTHORS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/krb5-libs/NOTICE: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libxkbcommon/COPYING: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/nettle/AUTHORS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/locale/uk/LC_MESSAGES/util-linux.mo: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/libsolv/README: No such file or directory
+[0m[91mcannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/lua/README: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/python3-pygpgme/PKG-INFO: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/man/man5/cert8.db.5.gz: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/man/man8/systemd-activate.8.gz: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/python3-libs/LICENSE: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/share/doc/glibc/BUGS: No such file or directory
+cannot reconstruct rpm from disk files
+[0m[91m/usr/lib64/python3.5/email/architecture.rst: No such file or directory
+cannot reconstruct rpm from disk files
+[0mgmp-1:6.1.1-1.fc24.x86_64: Delta RPM rebuild failed
+gnutls-3.4.14-1.fc24.x86_64: Delta RPM rebuild failed
+audit-libs-2.6.6-1.fc24.x86_64: Delta RPM rebuild failed
+coreutils-common-8.25-6.fc24.x86_64: Delta RPM rebuild failed
+chkconfig-1.8-1.fc24.x86_64: Delta RPM rebuild failed
+libassuan-2.4.3-1.fc24.x86_64: Delta RPM rebuild failed
+libgcrypt-1.6.5-1.fc24.x86_64: Delta RPM rebuild failed
+bash-completion-1:2.4-1.fc24.noarch: Delta RPM rebuild failed
+libgpg-error-1.24-1.fc24.x86_64: Delta RPM rebuild failed
+libxkbcommon-0.6.1-1.fc24.x86_64: Delta RPM rebuild failed
+nss-3.25.0-1.2.fc24.x86_64: Delta RPM rebuild failed
+libblkid-2.28-3.fc24.x86_64: Delta RPM rebuild failed
+lua-5.3.3-2.fc24.x86_64: Delta RPM rebuild failed
+cryptsetup-libs-1.7.2-1.fc24.x86_64: Delta RPM rebuild failed
+libidn-1.33-1.fc24.x86_64: Delta RPM rebuild failed
+curl-7.47.1-6.fc24.x86_64: Delta RPM rebuild failed
+python3-pygpgme-0.3-18.fc24.x86_64: Delta RPM rebuild failed
+system-python-libs-3.5.1-13.fc24.x86_64: Delta RPM rebuild failed
+systemd-229-12.fc24.x86_64: Delta RPM rebuild failed
+krb5-libs-1.14.3-4.fc24.x86_64: Delta RPM rebuild failed
+nettle-3.2-3.fc24.x86_64: Delta RPM rebuild failed
+libmnl-1.0.4-1.fc24.x86_64: Delta RPM rebuild failed
+util-linux-2.28-3.fc24.x86_64: Delta RPM rebuild failed
+ca-certificates-2016.2.8-1.0.fc24.noarch: Delta RPM rebuild failed
+glibc-2.23.1-8.fc24.x86_64: Delta RPM rebuild failed
+libtasn1-4.8-2.fc24.x86_64: Delta RPM rebuild failed
+python3-libs-3.5.1-13.fc24.x86_64: Delta RPM rebuild failed
+libsolv-0.6.23-2.fc24.x86_64: Delta RPM rebuild failed
+--------------------------------------------------------------------------------
+Total                                           7.1 MB/s |  93 MB     00:13     
+Delta RPMs reduced 91.8 MB of updates to 93.3 MB (-1.1% saved)
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Upgrading   : libgcc-6.1.1-3.fc24.x86_64                                1/172 
+  Upgrading   : fedora-repos-24-3.noarch                                  2/172 
+  Upgrading   : fedora-release-24-2.noarch                                3/172 
+  Upgrading   : tzdata-2016f-1.fc24.noarch                                4/172 
+  Upgrading   : nss-softokn-freebl-3.25.0-1.0.fc24.x86_64                 5/172 
+  Upgrading   : glibc-all-langpacks-2.23.1-8.fc24.x86_64                  6/172 
+  Upgrading   : glibc-common-2.23.1-8.fc24.x86_64                         7/172 
+  Upgrading   : glibc-2.23.1-8.fc24.x86_64                                8/172 
+  Upgrading   : libsepol-2.5-8.fc24.x86_64                                9/172 
+  Upgrading   : libstdc++-6.1.1-3.fc24.x86_64                            10/172 
+  Upgrading   : pcre-8.39-2.fc24.x86_64                                  11/172 
+  Upgrading   : libselinux-2.5-9.fc24.x86_64                             12/172 
+  Upgrading   : libgpg-error-1.24-1.fc24.x86_64                          13/172 
+  Upgrading   : nss-util-3.25.0-1.0.fc24.x86_64                          14/172 
+  Upgrading   : gmp-1:6.1.1-1.fc24.x86_64                                15/172 
+  Upgrading   : libuuid-2.28-3.fc24.x86_64                               16/172 
+  Upgrading   : libgcrypt-1.6.5-1.fc24.x86_64                            17/172 
+  Upgrading   : expat-2.1.1-2.fc24.x86_64                                18/172 
+  Upgrading   : libcap-ng-0.7.8-1.fc24.x86_64                            19/172 
+  Upgrading   : audit-libs-2.6.6-1.fc24.x86_64                           20/172 
+  Upgrading   : sqlite-libs-3.13.0-1.fc24.x86_64                         21/172 
+  Upgrading   : nss-softokn-3.25.0-1.0.fc24.x86_64                       22/172 
+  Upgrading   : libassuan-2.4.3-1.fc24.x86_64                            23/172 
+  Upgrading   : chkconfig-1.8-1.fc24.x86_64                              24/172 
+  Upgrading   : libsmartcols-2.28-3.fc24.x86_64                          25/172 
+  Upgrading   : libsss_idmap-1.13.4-4.fc24.x86_64                        26/172 
+  Upgrading   : libsss_nss_idmap-1.13.4-4.fc24.x86_64                    27/172 
+  Upgrading   : libtasn1-4.8-2.fc24.x86_64                               28/172 
+  Upgrading   : libxkbcommon-0.6.1-1.fc24.x86_64                         29/172 
+  Upgrading   : ncurses-base-6.0-6.20160709.fc24.noarch                  30/172 
+  Upgrading   : ncurses-libs-6.0-6.20160709.fc24.x86_64                  31/172 
+  Upgrading   : info-6.1-3.fc24.x86_64                                   32/172 
+  Upgrading   : libgomp-6.1.1-3.fc24.x86_64                              33/172 
+  Upgrading   : gettext-libs-0.19.8.1-2.fc24.x86_64                      34/172 
+  Upgrading   : cpp-6.1.1-3.fc24.x86_64                                  35/172 
+  Upgrading   : nettle-3.2-3.fc24.x86_64                                 36/172 
+  Upgrading   : ncurses-6.0-6.20160709.fc24.x86_64                       37/172 
+  Upgrading   : kernel-headers-4.6.6-300.fc24.x86_64                     38/172 
+  Upgrading   : glibc-headers-2.23.1-8.fc24.x86_64                       39/172 
+  Upgrading   : glibc-devel-2.23.1-8.fc24.x86_64                         40/172 
+  Upgrading   : emacs-filesystem-1:25.1-0.2.rc1.fc24.noarch              41/172 
+  Upgrading   : libidn-1.33-1.fc24.x86_64                                42/172 
+  Upgrading   : systemd-libs-229-12.fc24.x86_64                          43/172 
+  Upgrading   : dbus-libs-1:1.11.4-1.fc24.x86_64                         44/172 
+  Upgrading   : gnutls-3.4.14-1.fc24.x86_64                              45/172 
+  Upgrading   : gnupg2-2.1.13-1.fc24.x86_64                              46/172 
+  Upgrading   : gpgme-1.6.0-3.fc24.x86_64                                47/172 
+  Upgrading   : coreutils-common-8.25-6.fc24.x86_64                      48/172 
+  Upgrading   : ca-certificates-2016.2.8-1.0.fc24.noarch                 49/172 
+  Upgrading   : coreutils-8.25-6.fc24.x86_64                             50/172 
+  Upgrading   : krb5-libs-1.14.3-4.fc24.x86_64                           51/172 
+  Upgrading   : openssl-libs-1:1.0.2h-3.fc24.x86_64                      52/172 
+  Upgrading   : libblkid-2.28-3.fc24.x86_64                              53/172 
+  Upgrading   : system-python-libs-3.5.1-13.fc24.x86_64                  54/172 
+  Upgrading   : libmount-2.28-3.fc24.x86_64                              55/172 
+  Upgrading   : python3-libs-3.5.1-13.fc24.x86_64                        56/172 
+  Upgrading   : python3-3.5.1-13.fc24.x86_64                             57/172 
+  Upgrading   : libfdisk-2.28-3.fc24.x86_64                              58/172 
+  Upgrading   : util-linux-2.28-3.fc24.x86_64                            59/172 
+  Upgrading   : device-mapper-1.02.122-2.fc24.x86_64                     60/172 
+  Upgrading   : device-mapper-libs-1.02.122-2.fc24.x86_64                61/172 
+  Upgrading   : cryptsetup-libs-1.7.2-1.fc24.x86_64                      62/172 
+  Upgrading   : systemd-229-12.fc24.x86_64                               63/172 
+  Upgrading   : dbus-1:1.11.4-1.fc24.x86_64                              64/172 
+  Upgrading   : openssh-7.2p2-12.fc24.x86_64                             65/172 
+  Upgrading   : nss-sysinit-3.25.0-1.2.fc24.x86_64                       66/172 
+  Upgrading   : nss-3.25.0-1.2.fc24.x86_64                               67/172 
+  Installing  : nss-pem-1.0.2-2.fc24.x86_64                              68/172 
+  Upgrading   : libcurl-7.47.1-6.fc24.x86_64                             69/172 
+  Upgrading   : curl-7.47.1-6.fc24.x86_64                                70/172 
+  Upgrading   : nss-tools-3.25.0-1.2.fc24.x86_64                         71/172 
+  Upgrading   : openssh-clients-7.2p2-12.fc24.x86_64                     72/172 
+  Upgrading   : gettext-0.19.8.1-2.fc24.x86_64                           73/172 
+  Upgrading   : python3-pygpgme-0.3-18.fc24.x86_64                       74/172 
+  Upgrading   : libarchive-3.2.1-3.fc24.x86_64                           75/172 
+  Upgrading   : sssd-client-1.13.4-4.fc24.x86_64                         76/172 
+  Upgrading   : avahi-libs-0.6.32-4.fc24.x86_64                          77/172 
+  Upgrading   : gcc-6.1.1-3.fc24.x86_64                                  78/172 
+  Upgrading   : lua-5.3.3-2.fc24.x86_64                                  79/172 
+  Upgrading   : vim-minimal-2:7.4.1868-1.fc24.x86_64                     80/172 
+  Upgrading   : libsemanage-2.5-5.fc24.x86_64                            81/172 
+  Upgrading   : libsolv-0.6.23-2.fc24.x86_64                             82/172 
+  Upgrading   : libmnl-1.0.4-1.fc24.x86_64                               83/172 
+  Upgrading   : perl-Socket-3:2.024-1.fc24.x86_64                        84/172 
+  Upgrading   : libreport-filesystem-2.7.2-1.fc24.x86_64                 85/172 
+  Upgrading   : bash-completion-1:2.4-1.fc24.noarch                      86/172 
+  Installing  : kernel-debug-devel-4.6.6-300.fc24.x86_64                 87/172 
+  Cleanup     : gettext-0.19.8.1-1.fc24.x86_64                           88/172 
+  Cleanup     : openssh-clients-7.2p2-11.fc24.x86_64                     89/172 
+  Cleanup     : gettext-libs-0.19.8.1-1.fc24.x86_64                      90/172 
+  Cleanup     : sssd-client-1.13.4-3.fc24.x86_64                         91/172 
+  Cleanup     : nss-tools-3.23.0-1.2.fc24.x86_64                         92/172 
+  Cleanup     : curl-7.47.1-4.fc24.x86_64                                93/172 
+  Cleanup     : libcurl-7.47.1-4.fc24.x86_64                             94/172 
+  Cleanup     : nss-sysinit-3.23.0-1.2.fc24.x86_64                       95/172 
+  Cleanup     : nss-3.23.0-1.2.fc24.x86_64                               96/172 
+  Cleanup     : gcc-6.1.1-2.fc24.x86_64                                  97/172 
+  Cleanup     : python3-pygpgme-0.3-15.fc24.x86_64                       98/172 
+  Cleanup     : gpgme-1.4.3-7.fc24.x86_64                                99/172 
+  Cleanup     : gnupg2-2.1.11-3.fc24.x86_64                             100/172 
+  Cleanup     : gnutls-3.4.12-1.fc24.x86_64                             101/172 
+  Cleanup     : nss-softokn-3.23.0-1.0.fc24.x86_64                      102/172 
+  Cleanup     : openssh-7.2p2-11.fc24.x86_64                            103/172 
+  Cleanup     : cryptsetup-libs-1.7.1-1.fc24.x86_64                     104/172 
+  Cleanup     : device-mapper-libs-1.02.122-1.fc24.x86_64               105/172 
+  Cleanup     : device-mapper-1.02.122-1.fc24.x86_64                    106/172 
+  Cleanup     : dbus-1:1.11.2-1.fc24.x86_64                             107/172[91mFailed to connect to bus: No such file or directory
+[0m 
+  Cleanup     : systemd-229-8.fc24.x86_64                               108/172 
+  Cleanup     : util-linux-2.28-2.fc24.x86_64                           109/172 
+  Cleanup     : libmount-2.28-2.fc24.x86_64                             110/172 
+  Cleanup     : libsemanage-2.5-2.fc24.x86_64                           111/172 
+  Cleanup     : glibc-devel-2.23.1-7.fc24.x86_64                        112/172 
+  Cleanup     : libfdisk-2.28-2.fc24.x86_64                             113/172 
+  Cleanup     : libblkid-2.28-2.fc24.x86_64                             114/172 
+  Cleanup     : nettle-3.2-2.fc24.x86_64                                115/172 
+  Cleanup     : python3-3.5.1-7.fc24.x86_64                             116/172 
+  Cleanup     : cpp-6.1.1-2.fc24.x86_64                                 117/172 
+  Cleanup     : chkconfig-1.7-2.fc24.x86_64                             118/172 
+  Cleanup     : vim-minimal-2:7.4.1718-1.fc24.x86_64                    119/172 
+  Cleanup     : python3-libs-3.5.1-7.fc24.x86_64                        120/172 
+  Cleanup     : system-python-libs-3.5.1-7.fc24.x86_64                  121/172 
+  Cleanup     : libassuan-2.4.2-2.fc24.x86_64                           122/172 
+  Cleanup     : lua-5.3.2-3.fc24.x86_64                                 123/172 
+  Cleanup     : libsolv-0.6.20-3.fc24.x86_64                            124/172 
+  Cleanup     : libarchive-3.1.2-17.fc24.x86_64                         125/172 
+  Cleanup     : krb5-libs-1.14.1-6.fc24.x86_64                          126/172 
+  Cleanup     : openssl-libs-1:1.0.2h-1.fc24.x86_64                     127/172 
+  Cleanup     : ca-certificates-2016.2.7-1.0.fc24.noarch                128/172 
+  Cleanup     : coreutils-8.25-5.fc24.x86_64                            129/172 
+  Cleanup     : gmp-1:6.1.0-2.fc24.x86_64                               130/172 
+  Cleanup     : ncurses-6.0-5.20160116.fc24.x86_64                      131/172 
+  Cleanup     : avahi-libs-0.6.32-1.fc24.x86_64                         132/172 
+  Cleanup     : glibc-headers-2.23.1-7.fc24.x86_64                      133/172 
+  Cleanup     : fedora-repos-24-1.noarch                                134/172 
+  Cleanup     : fedora-release-24-1.noarch                              135/172 
+  Cleanup     : kernel-headers-4.6.4-301.fc24.x86_64                    136/172 
+  Cleanup     : coreutils-common-8.25-5.fc24.x86_64                     137/172 
+  Cleanup     : libreport-filesystem-2.7.1-1.fc24.x86_64                138/172 
+  Cleanup     : bash-completion-1:2.3-1.fc24.noarch                     139/172 
+  Cleanup     : dbus-libs-1:1.11.2-1.fc24.x86_64                        140/172 
+  Cleanup     : systemd-libs-229-8.fc24.x86_64                          141/172 
+  Cleanup     : libidn-1.32-2.fc24.x86_64                               142/172 
+  Cleanup     : libgcrypt-1.6.4-2.fc24.x86_64                           143/172 
+  Cleanup     : libgomp-6.1.1-2.fc24.x86_64                             144/172 
+  Cleanup     : info-6.1-2.fc24.x86_64                                  145/172 
+  Cleanup     : ncurses-libs-6.0-5.20160116.fc24.x86_64                 146/172 
+  Cleanup     : libgpg-error-1.21-2.fc24.x86_64                         147/172 
+  Cleanup     : expat-2.1.1-1.fc24.x86_64                               148/172 
+  Cleanup     : sqlite-libs-3.11.0-3.fc24.x86_64                        149/172 
+  Cleanup     : libuuid-2.28-2.fc24.x86_64                              150/172 
+  Cleanup     : audit-libs-2.5.2-1.fc24.x86_64                          151/172 
+  Cleanup     : libcap-ng-0.7.7-4.fc24.x86_64                           152/172 
+  Cleanup     : libsmartcols-2.28-2.fc24.x86_64                         153/172 
+  Cleanup     : libxkbcommon-0.5.0-4.fc24.x86_64                        154/172 
+  Cleanup     : nss-util-3.23.0-1.0.fc24.x86_64                         155/172 
+  Cleanup     : libtasn1-4.8-1.fc24.x86_64                              156/172 
+  Cleanup     : libsss_idmap-1.13.4-3.fc24.x86_64                       157/172 
+  Cleanup     : libsss_nss_idmap-1.13.4-3.fc24.x86_64                   158/172 
+  Cleanup     : perl-Socket-3:2.021-2.fc24.x86_64                       159/172 
+  Cleanup     : libmnl-1.0.3-11.fc24.x86_64                             160/172 
+  Cleanup     : ncurses-base-6.0-5.20160116.fc24.noarch                 161/172 
+  Cleanup     : emacs-filesystem-1:25.0.94-1.fc24.noarch                162/172 
+  Cleanup     : libsepol-2.5-3.fc24.x86_64                              163/172 
+  Cleanup     : libstdc++-6.1.1-2.fc24.x86_64                           164/172 
+  Cleanup     : pcre-8.38-11.fc24.x86_64                                165/172 
+  Cleanup     : libselinux-2.5-3.fc24.x86_64                            166/172 
+  Cleanup     : glibc-common-2.23.1-7.fc24.x86_64                       167/172 
+  Cleanup     : glibc-all-langpacks-2.23.1-7.fc24.x86_64                168/172 
+  Cleanup     : nss-softokn-freebl-3.23.0-1.0.fc24.x86_64               169/172 
+  Cleanup     : glibc-2.23.1-7.fc24.x86_64                              170/172 
+  Cleanup     : tzdata-2016d-1.fc24.noarch                              171/172 
+  Cleanup     : libgcc-6.1.1-2.fc24.x86_64                              172/172[91mFailed to connect to bus: No such file or directory
+[0m 
+  Verifying   : kernel-debug-devel-4.6.6-300.fc24.x86_64                  1/172 
+  Verifying   : nss-pem-1.0.2-2.fc24.x86_64                               2/172 
+  Verifying   : audit-libs-2.6.6-1.fc24.x86_64                            3/172 
+  Verifying   : avahi-libs-0.6.32-4.fc24.x86_64                           4/172 
+  Verifying   : bash-completion-1:2.4-1.fc24.noarch                       5/172 
+  Verifying   : ca-certificates-2016.2.8-1.0.fc24.noarch                  6/172 
+  Verifying   : chkconfig-1.8-1.fc24.x86_64                               7/172 
+  Verifying   : coreutils-8.25-6.fc24.x86_64                              8/172 
+  Verifying   : coreutils-common-8.25-6.fc24.x86_64                       9/172 
+  Verifying   : cpp-6.1.1-3.fc24.x86_64                                  10/172 
+  Verifying   : gcc-6.1.1-3.fc24.x86_64                                  11/172 
+  Verifying   : libgcc-6.1.1-3.fc24.x86_64                               12/172 
+  Verifying   : libgomp-6.1.1-3.fc24.x86_64                              13/172 
+  Verifying   : cryptsetup-libs-1.7.2-1.fc24.x86_64                      14/172 
+  Verifying   : curl-7.47.1-6.fc24.x86_64                                15/172 
+  Verifying   : libcurl-7.47.1-6.fc24.x86_64                             16/172 
+  Verifying   : dbus-1:1.11.4-1.fc24.x86_64                              17/172 
+  Verifying   : dbus-libs-1:1.11.4-1.fc24.x86_64                         18/172 
+  Verifying   : device-mapper-1.02.122-2.fc24.x86_64                     19/172 
+  Verifying   : device-mapper-libs-1.02.122-2.fc24.x86_64                20/172 
+  Verifying   : emacs-filesystem-1:25.1-0.2.rc1.fc24.noarch              21/172 
+  Verifying   : expat-2.1.1-2.fc24.x86_64                                22/172 
+  Verifying   : fedora-release-24-2.noarch                               23/172 
+  Verifying   : fedora-repos-24-3.noarch                                 24/172 
+  Verifying   : gettext-0.19.8.1-2.fc24.x86_64                           25/172 
+  Verifying   : gettext-libs-0.19.8.1-2.fc24.x86_64                      26/172 
+  Verifying   : glibc-2.23.1-8.fc24.x86_64                               27/172 
+  Verifying   : glibc-common-2.23.1-8.fc24.x86_64                        28/172 
+  Verifying   : glibc-all-langpacks-2.23.1-8.fc24.x86_64                 29/172 
+  Verifying   : glibc-devel-2.23.1-8.fc24.x86_64                         30/172 
+  Verifying   : glibc-headers-2.23.1-8.fc24.x86_64                       31/172 
+  Verifying   : gmp-1:6.1.1-1.fc24.x86_64                                32/172 
+  Verifying   : gnupg2-2.1.13-1.fc24.x86_64                              33/172 
+  Verifying   : gnutls-3.4.14-1.fc24.x86_64                              34/172 
+  Verifying   : gpgme-1.6.0-3.fc24.x86_64                                35/172 
+  Verifying   : info-6.1-3.fc24.x86_64                                   36/172 
+  Verifying   : kernel-headers-4.6.6-300.fc24.x86_64                     37/172 
+  Verifying   : krb5-libs-1.14.3-4.fc24.x86_64                           38/172 
+  Verifying   : libarchive-3.2.1-3.fc24.x86_64                           39/172 
+  Verifying   : libassuan-2.4.3-1.fc24.x86_64                            40/172 
+  Verifying   : libblkid-2.28-3.fc24.x86_64                              41/172 
+  Verifying   : libuuid-2.28-3.fc24.x86_64                               42/172 
+  Verifying   : libmount-2.28-3.fc24.x86_64                              43/172 
+  Verifying   : util-linux-2.28-3.fc24.x86_64                            44/172 
+  Verifying   : libfdisk-2.28-3.fc24.x86_64                              45/172 
+  Verifying   : libsmartcols-2.28-3.fc24.x86_64                          46/172 
+  Verifying   : libcap-ng-0.7.8-1.fc24.x86_64                            47/172 
+  Verifying   : libgcrypt-1.6.5-1.fc24.x86_64                            48/172 
+  Verifying   : libgpg-error-1.24-1.fc24.x86_64                          49/172 
+  Verifying   : libidn-1.33-1.fc24.x86_64                                50/172 
+  Verifying   : libmnl-1.0.4-1.fc24.x86_64                               51/172 
+  Verifying   : libreport-filesystem-2.7.2-1.fc24.x86_64                 52/172 
+  Verifying   : libselinux-2.5-9.fc24.x86_64                             53/172 
+  Verifying   : libsepol-2.5-8.fc24.x86_64                               54/172 
+  Verifying   : libsemanage-2.5-5.fc24.x86_64                            55/172 
+  Verifying   : libsolv-0.6.23-2.fc24.x86_64                             56/172 
+  Verifying   : libsss_idmap-1.13.4-4.fc24.x86_64                        57/172 
+  Verifying   : libsss_nss_idmap-1.13.4-4.fc24.x86_64                    58/172 
+  Verifying   : libstdc++-6.1.1-3.fc24.x86_64                            59/172 
+  Verifying   : libtasn1-4.8-2.fc24.x86_64                               60/172 
+  Verifying   : libxkbcommon-0.6.1-1.fc24.x86_64                         61/172 
+  Verifying   : lua-5.3.3-2.fc24.x86_64                                  62/172 
+  Verifying   : ncurses-6.0-6.20160709.fc24.x86_64                       63/172 
+  Verifying   : ncurses-libs-6.0-6.20160709.fc24.x86_64                  64/172 
+  Verifying   : ncurses-base-6.0-6.20160709.fc24.noarch                  65/172 
+  Verifying   : nettle-3.2-3.fc24.x86_64                                 66/172 
+  Verifying   : nss-3.25.0-1.2.fc24.x86_64                               67/172 
+  Verifying   : nss-softokn-3.25.0-1.0.fc24.x86_64                       68/172 
+  Verifying   : nss-util-3.25.0-1.0.fc24.x86_64                          69/172 
+  Verifying   : nss-softokn-freebl-3.25.0-1.0.fc24.x86_64                70/172 
+  Verifying   : nss-tools-3.25.0-1.2.fc24.x86_64                         71/172 
+  Verifying   : nss-sysinit-3.25.0-1.2.fc24.x86_64                       72/172 
+  Verifying   : openssh-7.2p2-12.fc24.x86_64                             73/172 
+  Verifying   : openssh-clients-7.2p2-12.fc24.x86_64                     74/172 
+  Verifying   : openssl-libs-1:1.0.2h-3.fc24.x86_64                      75/172 
+  Verifying   : pcre-8.39-2.fc24.x86_64                                  76/172 
+  Verifying   : perl-Socket-3:2.024-1.fc24.x86_64                        77/172 
+  Verifying   : python3-3.5.1-13.fc24.x86_64                             78/172 
+  Verifying   : python3-libs-3.5.1-13.fc24.x86_64                        79/172 
+  Verifying   : system-python-libs-3.5.1-13.fc24.x86_64                  80/172 
+  Verifying   : python3-pygpgme-0.3-18.fc24.x86_64                       81/172 
+  Verifying   : sqlite-libs-3.13.0-1.fc24.x86_64                         82/172 
+  Verifying   : sssd-client-1.13.4-4.fc24.x86_64                         83/172 
+  Verifying   : systemd-229-12.fc24.x86_64                               84/172 
+  Verifying   : systemd-libs-229-12.fc24.x86_64                          85/172 
+  Verifying   : tzdata-2016f-1.fc24.noarch                               86/172 
+  Verifying   : vim-minimal-2:7.4.1868-1.fc24.x86_64                     87/172 
+  Verifying   : audit-libs-2.5.2-1.fc24.x86_64                           88/172 
+  Verifying   : avahi-libs-0.6.32-1.fc24.x86_64                          89/172 
+  Verifying   : sqlite-libs-3.11.0-3.fc24.x86_64                         90/172 
+  Verifying   : sssd-client-1.13.4-3.fc24.x86_64                         91/172 
+  Verifying   : bash-completion-1:2.3-1.fc24.noarch                      92/172 
+  Verifying   : system-python-libs-3.5.1-7.fc24.x86_64                   93/172 
+  Verifying   : systemd-229-8.fc24.x86_64                                94/172 
+  Verifying   : systemd-libs-229-8.fc24.x86_64                           95/172 
+  Verifying   : ca-certificates-2016.2.7-1.0.fc24.noarch                 96/172 
+  Verifying   : chkconfig-1.7-2.fc24.x86_64                              97/172 
+  Verifying   : coreutils-8.25-5.fc24.x86_64                             98/172 
+  Verifying   : coreutils-common-8.25-5.fc24.x86_64                      99/172 
+  Verifying   : cpp-6.1.1-2.fc24.x86_64                                 100/172 
+  Verifying   : util-linux-2.28-2.fc24.x86_64                           101/172 
+  Verifying   : tzdata-2016d-1.fc24.noarch                              102/172 
+  Verifying   : vim-minimal-2:7.4.1718-1.fc24.x86_64                    103/172 
+  Verifying   : cryptsetup-libs-1.7.1-1.fc24.x86_64                     104/172 
+  Verifying   : curl-7.47.1-4.fc24.x86_64                               105/172 
+  Verifying   : dbus-1:1.11.2-1.fc24.x86_64                             106/172 
+  Verifying   : dbus-libs-1:1.11.2-1.fc24.x86_64                        107/172 
+  Verifying   : device-mapper-1.02.122-1.fc24.x86_64                    108/172 
+  Verifying   : device-mapper-libs-1.02.122-1.fc24.x86_64               109/172 
+  Verifying   : emacs-filesystem-1:25.0.94-1.fc24.noarch                110/172 
+  Verifying   : expat-2.1.1-1.fc24.x86_64                               111/172 
+  Verifying   : fedora-release-24-1.noarch                              112/172 
+  Verifying   : fedora-repos-24-1.noarch                                113/172 
+  Verifying   : gcc-6.1.1-2.fc24.x86_64                                 114/172 
+  Verifying   : gettext-0.19.8.1-1.fc24.x86_64                          115/172 
+  Verifying   : gettext-libs-0.19.8.1-1.fc24.x86_64                     116/172 
+  Verifying   : glibc-2.23.1-7.fc24.x86_64                              117/172 
+  Verifying   : glibc-all-langpacks-2.23.1-7.fc24.x86_64                118/172 
+  Verifying   : glibc-common-2.23.1-7.fc24.x86_64                       119/172 
+  Verifying   : glibc-devel-2.23.1-7.fc24.x86_64                        120/172 
+  Verifying   : glibc-headers-2.23.1-7.fc24.x86_64                      121/172 
+  Verifying   : gmp-1:6.1.0-2.fc24.x86_64                               122/172 
+  Verifying   : gnupg2-2.1.11-3.fc24.x86_64                             123/172 
+  Verifying   : gnutls-3.4.12-1.fc24.x86_64                             124/172 
+  Verifying   : gpgme-1.4.3-7.fc24.x86_64                               125/172 
+  Verifying   : info-6.1-2.fc24.x86_64                                  126/172 
+  Verifying   : kernel-headers-4.6.4-301.fc24.x86_64                    127/172 
+  Verifying   : krb5-libs-1.14.1-6.fc24.x86_64                          128/172 
+  Verifying   : libarchive-3.1.2-17.fc24.x86_64                         129/172 
+  Verifying   : libassuan-2.4.2-2.fc24.x86_64                           130/172 
+  Verifying   : libblkid-2.28-2.fc24.x86_64                             131/172 
+  Verifying   : libcap-ng-0.7.7-4.fc24.x86_64                           132/172 
+  Verifying   : libcurl-7.47.1-4.fc24.x86_64                            133/172 
+  Verifying   : libfdisk-2.28-2.fc24.x86_64                             134/172 
+  Verifying   : libgcc-6.1.1-2.fc24.x86_64                              135/172 
+  Verifying   : libgcrypt-1.6.4-2.fc24.x86_64                           136/172 
+  Verifying   : libgomp-6.1.1-2.fc24.x86_64                             137/172 
+  Verifying   : libgpg-error-1.21-2.fc24.x86_64                         138/172 
+  Verifying   : libidn-1.32-2.fc24.x86_64                               139/172 
+  Verifying   : libmnl-1.0.3-11.fc24.x86_64                             140/172 
+  Verifying   : libmount-2.28-2.fc24.x86_64                             141/172 
+  Verifying   : libreport-filesystem-2.7.1-1.fc24.x86_64                142/172 
+  Verifying   : libselinux-2.5-3.fc24.x86_64                            143/172 
+  Verifying   : libsemanage-2.5-2.fc24.x86_64                           144/172 
+  Verifying   : libsepol-2.5-3.fc24.x86_64                              145/172 
+  Verifying   : libsmartcols-2.28-2.fc24.x86_64                         146/172 
+  Verifying   : libsolv-0.6.20-3.fc24.x86_64                            147/172 
+  Verifying   : libsss_idmap-1.13.4-3.fc24.x86_64                       148/172 
+  Verifying   : libsss_nss_idmap-1.13.4-3.fc24.x86_64                   149/172 
+  Verifying   : libstdc++-6.1.1-2.fc24.x86_64                           150/172 
+  Verifying   : libtasn1-4.8-1.fc24.x86_64                              151/172 
+  Verifying   : libuuid-2.28-2.fc24.x86_64                              152/172 
+  Verifying   : libxkbcommon-0.5.0-4.fc24.x86_64                        153/172 
+  Verifying   : lua-5.3.2-3.fc24.x86_64                                 154/172 
+  Verifying   : ncurses-6.0-5.20160116.fc24.x86_64                      155/172 
+  Verifying   : ncurses-base-6.0-5.20160116.fc24.noarch                 156/172 
+  Verifying   : ncurses-libs-6.0-5.20160116.fc24.x86_64                 157/172 
+  Verifying   : nettle-3.2-2.fc24.x86_64                                158/172 
+  Verifying   : nss-3.23.0-1.2.fc24.x86_64                              159/172 
+  Verifying   : nss-softokn-3.23.0-1.0.fc24.x86_64                      160/172 
+  Verifying   : nss-softokn-freebl-3.23.0-1.0.fc24.x86_64               161/172 
+  Verifying   : nss-sysinit-3.23.0-1.2.fc24.x86_64                      162/172 
+  Verifying   : nss-tools-3.23.0-1.2.fc24.x86_64                        163/172 
+  Verifying   : nss-util-3.23.0-1.0.fc24.x86_64                         164/172 
+  Verifying   : openssh-7.2p2-11.fc24.x86_64                            165/172 
+  Verifying   : openssh-clients-7.2p2-11.fc24.x86_64                    166/172 
+  Verifying   : openssl-libs-1:1.0.2h-1.fc24.x86_64                     167/172 
+  Verifying   : pcre-8.38-11.fc24.x86_64                                168/172 
+  Verifying   : perl-Socket-3:2.021-2.fc24.x86_64                       169/172 
+  Verifying   : python3-3.5.1-7.fc24.x86_64                             170/172 
+  Verifying   : python3-libs-3.5.1-7.fc24.x86_64                        171/172 
+  Verifying   : python3-pygpgme-0.3-15.fc24.x86_64                      172/172 
+
+Installed:
+  kernel-debug-devel.x86_64 4.6.6-300.fc24      nss-pem.x86_64 1.0.2-2.fc24     
+
+Upgraded:
+  audit-libs.x86_64 2.6.6-1.fc24                                                
+  avahi-libs.x86_64 0.6.32-4.fc24                                               
+  bash-completion.noarch 1:2.4-1.fc24                                           
+  ca-certificates.noarch 2016.2.8-1.0.fc24                                      
+  chkconfig.x86_64 1.8-1.fc24                                                   
+  coreutils.x86_64 8.25-6.fc24                                                  
+  coreutils-common.x86_64 8.25-6.fc24                                           
+  cpp.x86_64 6.1.1-3.fc24                                                       
+  cryptsetup-libs.x86_64 1.7.2-1.fc24                                           
+  curl.x86_64 7.47.1-6.fc24                                                     
+  dbus.x86_64 1:1.11.4-1.fc24                                                   
+  dbus-libs.x86_64 1:1.11.4-1.fc24                                              
+  device-mapper.x86_64 1.02.122-2.fc24                                          
+  device-mapper-libs.x86_64 1.02.122-2.fc24                                     
+  emacs-filesystem.noarch 1:25.1-0.2.rc1.fc24                                   
+  expat.x86_64 2.1.1-2.fc24                                                     
+  fedora-release.noarch 24-2                                                    
+  fedora-repos.noarch 24-3                                                      
+  gcc.x86_64 6.1.1-3.fc24                                                       
+  gettext.x86_64 0.19.8.1-2.fc24                                                
+  gettext-libs.x86_64 0.19.8.1-2.fc24                                           
+  glibc.x86_64 2.23.1-8.fc24                                                    
+  glibc-all-langpacks.x86_64 2.23.1-8.fc24                                      
+  glibc-common.x86_64 2.23.1-8.fc24                                             
+  glibc-devel.x86_64 2.23.1-8.fc24                                              
+  glibc-headers.x86_64 2.23.1-8.fc24                                            
+  gmp.x86_64 1:6.1.1-1.fc24                                                     
+  gnupg2.x86_64 2.1.13-1.fc24                                                   
+  gnutls.x86_64 3.4.14-1.fc24                                                   
+  gpgme.x86_64 1.6.0-3.fc24                                                     
+  info.x86_64 6.1-3.fc24                                                        
+  kernel-headers.x86_64 4.6.6-300.fc24                                          
+  krb5-libs.x86_64 1.14.3-4.fc24                                                
+  libarchive.x86_64 3.2.1-3.fc24                                                
+  libassuan.x86_64 2.4.3-1.fc24                                                 
+  libblkid.x86_64 2.28-3.fc24                                                   
+  libcap-ng.x86_64 0.7.8-1.fc24                                                 
+  libcurl.x86_64 7.47.1-6.fc24                                                  
+  libfdisk.x86_64 2.28-3.fc24                                                   
+  libgcc.x86_64 6.1.1-3.fc24                                                    
+  libgcrypt.x86_64 1.6.5-1.fc24                                                 
+  libgomp.x86_64 6.1.1-3.fc24                                                   
+  libgpg-error.x86_64 1.24-1.fc24                                               
+  libidn.x86_64 1.33-1.fc24                                                     
+  libmnl.x86_64 1.0.4-1.fc24                                                    
+  libmount.x86_64 2.28-3.fc24                                                   
+  libreport-filesystem.x86_64 2.7.2-1.fc24                                      
+  libselinux.x86_64 2.5-9.fc24                                                  
+  libsemanage.x86_64 2.5-5.fc24                                                 
+  libsepol.x86_64 2.5-8.fc24                                                    
+  libsmartcols.x86_64 2.28-3.fc24                                               
+  libsolv.x86_64 0.6.23-2.fc24                                                  
+  libsss_idmap.x86_64 1.13.4-4.fc24                                             
+  libsss_nss_idmap.x86_64 1.13.4-4.fc24                                         
+  libstdc++.x86_64 6.1.1-3.fc24                                                 
+  libtasn1.x86_64 4.8-2.fc24                                                    
+  libuuid.x86_64 2.28-3.fc24                                                    
+  libxkbcommon.x86_64 0.6.1-1.fc24                                              
+  lua.x86_64 5.3.3-2.fc24                                                       
+  ncurses.x86_64 6.0-6.20160709.fc24                                            
+  ncurses-base.noarch 6.0-6.20160709.fc24                                       
+  ncurses-libs.x86_64 6.0-6.20160709.fc24                                       
+  nettle.x86_64 3.2-3.fc24                                                      
+  nss.x86_64 3.25.0-1.2.fc24                                                    
+  nss-softokn.x86_64 3.25.0-1.0.fc24                                            
+  nss-softokn-freebl.x86_64 3.25.0-1.0.fc24                                     
+  nss-sysinit.x86_64 3.25.0-1.2.fc24                                            
+  nss-tools.x86_64 3.25.0-1.2.fc24                                              
+  nss-util.x86_64 3.25.0-1.0.fc24                                               
+  openssh.x86_64 7.2p2-12.fc24                                                  
+  openssh-clients.x86_64 7.2p2-12.fc24                                          
+  openssl-libs.x86_64 1:1.0.2h-3.fc24                                           
+  pcre.x86_64 8.39-2.fc24                                                       
+  perl-Socket.x86_64 3:2.024-1.fc24                                             
+  python3.x86_64 3.5.1-13.fc24                                                  
+  python3-libs.x86_64 3.5.1-13.fc24                                             
+  python3-pygpgme.x86_64 0.3-18.fc24                                            
+  sqlite-libs.x86_64 3.13.0-1.fc24                                              
+  sssd-client.x86_64 1.13.4-4.fc24                                              
+  system-python-libs.x86_64 3.5.1-13.fc24                                       
+  systemd.x86_64 229-12.fc24                                                    
+  systemd-libs.x86_64 229-12.fc24                                               
+  tzdata.noarch 2016f-1.fc24                                                    
+  util-linux.x86_64 2.28-3.fc24                                                 
+  vim-minimal.x86_64 2:7.4.1868-1.fc24                                          
+
+Complete!
+# OS package update successful
+The following command needs to be run through "sudo":
+    yum install -y m4
+[91mYum command has been deprecated, redirecting to '/usr/bin/dnf install -y m4'.
+See 'man dnf' and 'man yum2dnf' for more information.
+To transfer transaction metadata from yum to DNF, run:
+'dnf install python-dnf-plugins-extras-migrate && dnf-2 migrate'
+
+[0mLast metadata expiration check: 0:03:27 ago on Thu Aug 18 15:23:25 2016.
+Dependencies resolved.
+================================================================================
+ Package      Arch             Version                   Repository        Size
+================================================================================
+Installing:
+ m4           x86_64           1.4.17-9.fc24             fedora           266 k
+
+Transaction Summary
+================================================================================
+Install  1 Package
+
+Total download size: 266 k
+Installed size: 526 k
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                           176 kB/s | 266 kB     00:01     
+Running transaction check
+Transaction check succeeded.
+Running transaction test
+Transaction test succeeded.
+Running transaction
+  Installing  : m4-1.4.17-9.fc24.x86_64                                     1/1 
+  Verifying   : m4-1.4.17-9.fc24.x86_64                                     1/1 
+
+Installed:
+  m4.x86_64 1.4.17-9.fc24                                                       
+
+Complete!
+The following command needs to be run through "sudo":
+    rpm -q m4
+m4-1.4.17-9.fc24.x86_64
+# OS packages installation successful
+
+=-=- Synchronising pinned packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[mirage: local] Command started
+[mirage] /home/opam/src/ already up-to-date
+The following dependencies couldn't be met:
+  - mirage -> mirage-types-lwt >= 3.0.0
+Your request can't be satisfied:
+  - No package matches mirage-types-lwt>=3.0.0.
+
+No solution found, exiting
+[91m'opam install -j 2 -vy mirage' failed.
+[0mRemoving intermediate container 657648a1765c
+The command '/bin/sh -c git fetch origin pull/558/head:cibranch &&   git checkout 9f190fe4dd30c9aa6a09eb60f1cb3ede752806fa &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage' returned a non-zero code: 3
+[2016-08-18 15:27.38] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=bfc025aa8534a5e91eac1dd36f1ef422 --label com.docker.datakit.builton=1471533481.63 -t opamci:bfc025aa8534a5e91eac1dd36f1ef422 --no-cache --rm --force-rm --pull - < /tmp/tmp-346aa615/Dockerfile" exited with status 3
