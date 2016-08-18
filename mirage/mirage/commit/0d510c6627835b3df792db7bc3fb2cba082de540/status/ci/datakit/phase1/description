@@ -1,1 +1,1 @@
-ERR (debian-stable/4.03.0=Command "sh" "-c" "docker build --label com.docker.datakit.digest=e49fcfce6f647a0b0814e876d63965e8 --label com.docker.datakit.builton=1471430348.69 -t opamci:e49fcfce6f647a0b0814e876d63965e8 --no-cache --rm --force-rm --pull - < /tmp/tmp-2af3aaef/Dockerfile" exited with status 1)
+Building Dockerfile for minimal:559 (debian-stable/4.03.0)
