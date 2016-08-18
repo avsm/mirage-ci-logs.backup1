@@ -1,0 +1,60 @@
+=== Building container 4b092b966ad952eb75635059c625c0fd
+[2016-08-18 11:02.20] Starting...
+[2016-08-18 11:02.20] Waiting for free pool slot to build 4b092b966ad952eb75635059c625c0fd
+[2016-08-18 11:46.31] Pool slot obtained, starting build of 4b092b966ad952eb75635059c625c0fd
+[2016-08-18 11:46.31] Building container for 4b092b966ad952eb75635059c625c0fd
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:ubuntu-16.04_ocaml-4.02.3
+ubuntu-16.04_ocaml-4.02.3: Pulling from ocaml/opam
+Digest: sha256:12424d50d9ebf136c86ce6e7798cb31fba836d278b15e83fbaffb4788ac99b42
+Status: Image is up to date for ocaml/opam:ubuntu-16.04_ocaml-4.02.3
+ ---> 44ff4091b0fa
+Step 2 : RUN git clone git://github.com/mirage/mirage /home/opam/src
+ ---> Running in a8964cff34d5
+[91mCloning into '/home/opam/src'...
+[0m ---> 910a45bd5475
+Removing intermediate container a8964cff34d5
+Step 3 : WORKDIR /home/opam/src
+ ---> Running in 48a41113ed56
+ ---> 4b3cdf3ccf06
+Removing intermediate container 48a41113ed56
+Step 4 : RUN git fetch origin pull/558/head:cibranch &&   git checkout cibranch &&   cat /etc/os-release || true &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage
+ ---> Running in f5dbda9920f7
+[91mFrom git://github.com/mirage/mirage
+ * [new ref]         refs/pull/558/head -> cibranch
+[0m[91mSwitched to branch 'cibranch'
+[0mNAME="Ubuntu"
+VERSION="16.04.1 LTS (Xenial Xerus)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 16.04.1 LTS"
+VERSION_ID="16.04"
+HOME_URL="http://www.ubuntu.com/"
+SUPPORT_URL="http://help.ubuntu.com/"
+BUG_REPORT_URL="http://bugs.launchpad.net/ubuntu/"
+UBUNTU_CODENAME=xenial
+mirage is now path-pinned to /home/opam/src
+
+[mirage: local]
+[mirage] /home/opam/src/ synchronized
+[mirage] Installing new package description from /home/opam/src
+
+# Detecting depexts using flags: x86_64 linux ubuntu
+# The following system packages are needed:
+#  - camlp4-extra
+#  - m4
+# All required OS packages found.
+
+=-=- Synchronising pinned packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[mirage: local] Command started
+[mirage] /home/opam/src/ already up-to-date
+The following dependencies couldn't be met:
+  - mirage -> mirage-types-lwt >= 3.0.0
+Your request can't be satisfied:
+  - No package matches mirage-types-lwt>=3.0.0.
+
+No solution found, exiting
+[91m'opam install -j 2 -vy mirage' failed.
+[0mRemoving intermediate container f5dbda9920f7
+The command '/bin/sh -c git fetch origin pull/558/head:cibranch &&   git checkout cibranch &&   cat /etc/os-release || true &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage' returned a non-zero code: 3
+[2016-08-18 11:50.53] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=4b092b966ad952eb75635059c625c0fd --label com.docker.datakit.builton=1471520791.58 -t opamci:4b092b966ad952eb75635059c625c0fd --no-cache --rm --force-rm --pull - < /tmp/tmp-a509a7/Dockerfile" exited with status 3
