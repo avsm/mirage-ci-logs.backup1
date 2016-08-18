@@ -1,1 +1,7 @@
-Building Dockerfile for mergable:293 (alpine-3.4/4.03.0)
+ERR (debian-stable/4.02.3=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-24f2945c/Dockerfile" exited with status 4)
+ERR (debian-testing/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-10e65e4c/Dockerfile" exited with status 4)
+ERR (ubuntu-16.04/4.02.3=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-2bbc52f5/Dockerfile" exited with status 4)
+ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-366f7735/Dockerfile" exited with status 4)
+ERR (fedora-24/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-3a8b16e8/Dockerfile" exited with status 4)
+ERR (centos-7/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-3ce7d1f4/Dockerfile" exited with status 4)
+ERR (alpine-3.4/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-1cf5c83c/Dockerfile" exited with status 4)

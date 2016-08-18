@@ -1,2 +1,7 @@
-(Invalid_argument
-  "\"dockerfile-of-mergable-debian-testing-4.03.0+flambda-for-440\" is not a valid branch name.")
+ERR (debian-stable/4.02.3=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-24a4b65f/Dockerfile" exited with status 4)
+ERR (debian-testing/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-1506768d/Dockerfile" exited with status 4)
+ERR (ubuntu-16.04/4.02.3=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-2da9f581/Dockerfile" exited with status 4)
+ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-4f4e8f4/Dockerfile" exited with status 4)
+ERR (fedora-24/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-15554725/Dockerfile" exited with status 4)
+ERR (centos-7/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-f3bb9a4/Dockerfile" exited with status 4)
+ERR (alpine-3.4/4.03.0=Command "sh" "-c" "docker build --no-cache --rm --pull - < /tmp/tmp-23702de8/Dockerfile" exited with status 4)
