@@ -1,13 +1,1 @@
-OK (debian-stable/4.02.3=sha256:188aeeb30610cf09239377ef7b204a50209c0e04a5c8ed69371fc89e6a6fbbbd
-)
-OK (debian-testing/4.03.0=sha256:6f44f501d8419457b3ff69fe398c24740fb87a1161e00884c591c5d0024896c3
-)
-OK (ubuntu-16.04/4.02.3=sha256:4ff612d13eab0b4e9052e373ca151afeb3f8905f8093ec8f2c734cca63b694f9
-)
-ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build --label com.docker.datakit.digest=3e8f72b680cdd97a507762ac0b2f33f3 --label com.docker.datakit.builton=1471520592.74 -t opamci:3e8f72b680cdd97a507762ac0b2f33f3 --no-cache --rm --force-rm --pull - < /tmp/tmp-191a0436/Dockerfile" exited with status 4)
-OK (fedora-24/4.03.0=sha256:af96837dd2dc57a6ebab4c235f7de948f3feeb8b46126509b7c02faffb74bfa0
-)
-OK (centos-7/4.03.0=sha256:67730cddcea5bf64c2206c0d843331d4428e2b1b356f614b581b791a72a279f3
-)
-OK (alpine-3.4/4.03.0=sha256:ce5fc95b53c3d4dde31603016c3996052a7abffdfc78aab95b668c511a37146e
-)
+OK (6/7) ERR(opensuse-42.1/4.03.0)
