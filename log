@@ -1,0 +1,11 @@
+=== Building Dockerfile for mergable:548 (fedora-24/4.03.0)
+[2016-08-18 14:24.37] Starting...
+[2016-08-18 14:24.37] Building Dockerfile for installing mirage (fedora-24 4.03.0)
+FROM ocaml/opam:fedora-24_ocaml-4.03.0
+RUN git clone git://github.com/mirage/mirage /home/opam/src
+WORKDIR /home/opam/src
+RUN git fetch origin pull/548/head:cibranch
+RUN git checkout 8a9ccd186efcb96f69c3c8807e5f12b8d87872cf
+RUN opam pin add -n mirage /home/opam/src
+RUN opam depext -uy mirage
+RUN opam install -j 2 -vy mirage[2016-08-18 14:24.37] Success
