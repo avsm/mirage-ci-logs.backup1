@@ -1,0 +1,70 @@
+=== Building container ac1ab2a965757b3548290f6bce2ef812
+[2016-08-18 11:02.20] Starting...
+[2016-08-18 11:02.20] Waiting for free pool slot to build ac1ab2a965757b3548290f6bce2ef812
+[2016-08-18 11:47.16] Pool slot obtained, starting build of ac1ab2a965757b3548290f6bce2ef812
+[2016-08-18 11:47.16] Building container for ac1ab2a965757b3548290f6bce2ef812
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:alpine-3.4_ocaml-4.03.0
+alpine-3.4_ocaml-4.03.0: Pulling from ocaml/opam
+Digest: sha256:e425ecba632eb0d32e2615a06f858a52dc5732353cfc3039996fdf86dafbce80
+Status: Image is up to date for ocaml/opam:alpine-3.4_ocaml-4.03.0
+ ---> edad9f89c507
+Step 2 : RUN git clone git://github.com/mirage/mirage /home/opam/src
+ ---> Running in 98b5627aea17
+[91mCloning into '/home/opam/src'...
+[0m ---> 41ee1373ee9e
+Removing intermediate container 98b5627aea17
+Step 3 : WORKDIR /home/opam/src
+ ---> Running in 15c12d3783b9
+ ---> 093423651f8e
+Removing intermediate container 15c12d3783b9
+Step 4 : RUN git fetch origin pull/558/head:cibranch &&   git checkout cibranch &&   cat /etc/os-release || true &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage
+ ---> Running in 105f31e17cc7
+[91mFrom git://github.com/mirage/mirage
+ * [new ref]         refs/pull/558/head -> cibranch
+[0m[91mSwitched to branch 'cibranch'
+[0mNAME="Alpine Linux"
+ID=alpine
+VERSION_ID=3.4.0
+PRETTY_NAME="Alpine Linux v3.4"
+HOME_URL="http://alpinelinux.org"
+BUG_REPORT_URL="http://bugs.alpinelinux.org"
+mirage is now path-pinned to /home/opam/src
+
+[mirage: local]
+[mirage] /home/opam/src/ synchronized
+[mirage] Installing new package description from /home/opam/src
+
+# Detecting depexts using flags: x86_64 linux alpine
+# The following system packages are needed:
+#  - m4
+The following command needs to be run through "sudo":
+    apk update
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/main/x86_64/APKINDEX.tar.gz
+fetch http://dl-cdn.alpinelinux.org/alpine/v3.4/community/x86_64/APKINDEX.tar.gz
+fetch http://www.cl.cam.ac.uk/~avsm2/alpine-ocaml/3.4/x86_64/APKINDEX.tar.gz
+v3.4.3-3-g543f7af [http://dl-cdn.alpinelinux.org/alpine/v3.4/main]
+v3.4.2-11-g9b41a63 [http://dl-cdn.alpinelinux.org/alpine/v3.4/community]
+testing v3.3.0-55-g55836a9 [http://www.cl.cam.ac.uk/~avsm2/alpine-ocaml/3.4]
+OK: 5972 distinct packages available
+# OS package update successful
+The following command needs to be run through "sudo":
+    apk add m4
+(1/1) Installing m4 (1.4.17-r1)
+Executing busybox-1.24.2-r11.trigger
+OK: 435 MiB in 84 packages
+# OS packages installation successful
+
+=-=- Synchronising pinned packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[mirage: local] Command started
+[mirage] /home/opam/src/ already up-to-date
+The following dependencies couldn't be met:
+  - mirage -> mirage-types-lwt >= 3.0.0
+Your request can't be satisfied:
+  - No package matches mirage-types-lwt>=3.0.0.
+
+No solution found, exiting
+[91m'opam install -j 2 -vy mirage' failed.
+[0mRemoving intermediate container 105f31e17cc7
+The command '/bin/sh -c git fetch origin pull/558/head:cibranch &&   git checkout cibranch &&   cat /etc/os-release || true &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage' returned a non-zero code: 3
+[2016-08-18 11:51.44] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=ac1ab2a965757b3548290f6bce2ef812 --label com.docker.datakit.builton=1471520836.03 -t opamci:ac1ab2a965757b3548290f6bce2ef812 --no-cache --rm --force-rm --pull - < /tmp/tmp-1bace349/Dockerfile" exited with status 3
