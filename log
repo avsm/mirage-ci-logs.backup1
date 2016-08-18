@@ -1,0 +1,17 @@
+=== Building container 37f79a614d00c3dd333b7f692d9b1b00
+[2016-08-18 11:02.20] Starting...
+[2016-08-18 11:02.20] Waiting for free pool slot to build 37f79a614d00c3dd333b7f692d9b1b00
+[2016-08-18 11:29.38] Pool slot obtained, starting build of 37f79a614d00c3dd333b7f692d9b1b00
+[2016-08-18 11:29.38] Building container for 37f79a614d00c3dd333b7f692d9b1b00
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:ubuntu-16.04_ocaml-4.02.3
+ubuntu-16.04_ocaml-4.02.3: Pulling from ocaml/opam
+Digest: sha256:12424d50d9ebf136c86ce6e7798cb31fba836d278b15e83fbaffb4788ac99b42
+Status: Image is up to date for ocaml/opam:ubuntu-16.04_ocaml-4.02.3
+ ---> 44ff4091b0fa
+Step 2 : RUN git clone git://github.com/mirage/mirage /home/opam/src
+ ---> Running in 29b6f852a1c8
+[91mCloning into '/home/opam/src'...
+[0mRemoving intermediate container 29b6f852a1c8
+error creating zfs mount of zpool-docker/docker/f3bff6aead9c0d19f1796f3807c10e06cb2f95b84b2c96e60ebbf8bd5505f1ff to /var/lib/docker/zfs/graph/f3bff6aead9c0d19f1796f3807c10e06cb2f95b84b2c96e60ebbf8bd5505f1ff: device or resource busy
+[2016-08-18 11:30.40] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=37f79a614d00c3dd333b7f692d9b1b00 --label com.docker.datakit.builton=1471519778.88 -t opamci:37f79a614d00c3dd333b7f692d9b1b00 --no-cache --rm --force-rm --pull - < /tmp/tmp-28be1e90/Dockerfile" exited with status 1
