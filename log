@@ -1,0 +1,25 @@
+=== Building container 16479f8f05d5e58fa7a15f24583407ce
+[2016-08-18 14:29.01] Starting...
+[2016-08-18 14:29.01] Waiting for free pool slot to build 16479f8f05d5e58fa7a15f24583407ce
+[2016-08-18 15:27.44] Pool slot obtained, starting build of 16479f8f05d5e58fa7a15f24583407ce
+[2016-08-18 15:27.44] Building container for 16479f8f05d5e58fa7a15f24583407ce
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:opensuse-42.1_ocaml-4.03.0
+opensuse-42.1_ocaml-4.03.0: Pulling from ocaml/opam
+Digest: sha256:02a25f6d3a8fa21b4b62b75a69d7a4b01843def67253e7dffea9b571200e697e
+Status: Image is up to date for ocaml/opam:opensuse-42.1_ocaml-4.03.0
+ ---> 7eaa8b5ca0fe
+Step 2 : RUN git clone git://github.com/mirage/mirage /home/opam/src
+ ---> Running in 5a08e213fff8
+[91mCloning into '/home/opam/src'...
+[0m ---> 214926063aca
+Removing intermediate container 5a08e213fff8
+Step 3 : WORKDIR /home/opam/src
+ ---> Running in 7997e46b8692
+ ---> 67e1e9c48174
+Removing intermediate container 7997e46b8692
+Step 4 : RUN git fetch origin pull/568/head:cibranch &&   git checkout c3495be8394753e90174047b7a824f4fbbf52331 &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage
+ ---> Running in 3d93ccfffd26
+Removing intermediate container 3d93ccfffd26
+error creating zfs mount of zpool-docker/docker/b1dae2efac78bc3c0d82dece27070f27809c844e4ccd7ad3b03f6c57dbba67cf to /var/lib/docker/zfs/graph/b1dae2efac78bc3c0d82dece27070f27809c844e4ccd7ad3b03f6c57dbba67cf: device or resource busy
+[2016-08-18 15:33.13] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=16479f8f05d5e58fa7a15f24583407ce --label com.docker.datakit.builton=1471534064.2 -t opamci:16479f8f05d5e58fa7a15f24583407ce --no-cache --rm --force-rm --pull - < /tmp/tmp-184b3a/Dockerfile" exited with status 1
