@@ -1,1 +1,13 @@
-Building container b34142e8d653be8fc63693b2c5455de4
+OK (debian-stable/4.02.3=sha256:b7d9e971570f6c8d505db2750e2f802a6a5e2546e57a99fcb75596eda6335d61
+)
+OK (debian-testing/4.03.0=sha256:701bcdcc699bff27da1f214b8a6c983a43d64cf00005863057b358095333a461
+)
+OK (ubuntu-16.04/4.02.3=sha256:016eecf1c8272642a4160c887340908bd14d5fbdf5d1652e75a1c11b36f404d2
+)
+ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build --label com.docker.datakit.digest=28a0b7b6074bdaf86932b6c59c2a2b85 --label com.docker.datakit.builton=1471520316.95 -t opamci:28a0b7b6074bdaf86932b6c59c2a2b85 --no-cache --rm --force-rm --pull - < /tmp/tmp-2badf775/Dockerfile" exited with status 4)
+OK (fedora-24/4.03.0=sha256:e0485859fb303827c01caed6b6ad4d5bcbd0bc317a27c1f19720cec417fdcee1
+)
+OK (centos-7/4.03.0=sha256:2562fec45ef0b83c4a33e7c6fde367cd0161462d48197a32f5e4c0fb7789d09e
+)
+OK (alpine-3.4/4.03.0=sha256:14f46297f38550c186e7e1e418fc79e676ff491dbad72321ae5a8be32f0a6013
+)
