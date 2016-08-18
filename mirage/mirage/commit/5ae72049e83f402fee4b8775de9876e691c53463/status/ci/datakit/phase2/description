@@ -1,1 +1,12 @@
-Building container 1a86cf8d85f4677b0f89f272a12178bd
+OK (debian-stable/4.02.3=sha256:38de7392b450d5b0bcdd00817cfe6a228437faad7e5eb82617ee63a2bdae0778
+)
+OK (debian-testing/4.03.0=sha256:d873fa2e2cf6ba048af67f17a509b9e9da17bd471290a6b1639cf9c19dee3ef4
+)
+OK (ubuntu-16.04/4.02.3=sha256:ed021087dc4018ce792d32099561aead98dbda201569d003a4f51f1f49e61ccd
+)
+ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build --label com.docker.datakit.digest=96df9bcc612287ce8a06b4d3bd444d42 --label com.docker.datakit.builton=1471519505.7 -t opamci:96df9bcc612287ce8a06b4d3bd444d42 --no-cache --rm --force-rm --pull - < /tmp/tmp-14d64cf0/Dockerfile" exited with status 4)
+OK (fedora-24/4.03.0=sha256:5f6a77f9e68617e148c9ca9349dfaca5c6ee64dd25c24e1ab8e847e6d5d491b8
+)
+ERR (centos-7/4.03.0=Command "sh" "-c" "docker build --label com.docker.datakit.digest=1ddab6bc763df4e855a13082fecd355f --label com.docker.datakit.builton=1471519510.25 -t opamci:1ddab6bc763df4e855a13082fecd355f --no-cache --rm --force-rm --pull - < /tmp/tmp-3dcda4d5/Dockerfile" exited with status 1)
+OK (alpine-3.4/4.03.0=sha256:746c8a2dbdc3a49e31dabf3713b96f70143391a0b963cf2f0ececaa72ff3ff99
+)
