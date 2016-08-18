@@ -1,7 +1,0 @@
-OK (debian-stable/4.02.3=TODO)
-OK (debian-testing/4.03.0=TODO)
-OK (ubuntu-16.04/4.02.3=TODO)
-ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build -t opamci:a137d8a366f24dc9232fdd4cc5908603 --no-cache --rm --force-rm --pull - < /tmp/tmp-31404641/Dockerfile" exited with status 4)
-OK (fedora-24/4.03.0=TODO)
-OK (centos-7/4.03.0=TODO)
-OK (alpine-3.4/4.03.0=TODO)
