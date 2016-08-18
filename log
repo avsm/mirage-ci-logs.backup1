@@ -1,0 +1,29 @@
+=== Building container 2746a33fec1969db23536777a88cec0a
+[2016-08-18 11:02.19] Starting...
+[2016-08-18 11:02.19] Waiting for free pool slot to build 2746a33fec1969db23536777a88cec0a
+[2016-08-18 11:02.19] Pool slot obtained, starting build of 2746a33fec1969db23536777a88cec0a
+[2016-08-18 11:02.19] Building container for 2746a33fec1969db23536777a88cec0a
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:opensuse-42.1_ocaml-4.03.0
+opensuse-42.1_ocaml-4.03.0: Pulling from ocaml/opam
+bffa29266eb0: Already exists
+3f821fa1169e: Pulling fs layer
+38bc37710285: Pulling fs layer
+aefd93068c82: Pulling fs layer
+38bc37710285: Download complete
+3f821fa1169e: Verifying Checksum
+3f821fa1169e: Download complete
+aefd93068c82: Verifying Checksum
+aefd93068c82: Download complete
+3f821fa1169e: Pull complete
+38bc37710285: Pull complete
+aefd93068c82: Pull complete
+Digest: sha256:02a25f6d3a8fa21b4b62b75a69d7a4b01843def67253e7dffea9b571200e697e
+Status: Image is up to date for ocaml/opam:opensuse-42.1_ocaml-4.03.0
+ ---> 7eaa8b5ca0fe
+Step 2 : RUN git clone git://github.com/mirage/ocaml-cohttp /home/opam/src
+ ---> Running in 662e0fead5f2
+[91mCloning into '/home/opam/src'...
+[0mRemoving intermediate container 662e0fead5f2
+error creating zfs mount of zpool-docker/docker/50cc8005430703c4778902ab67a1ad8c48246949d06a1d0b86f5d8cc0d948158 to /var/lib/docker/zfs/graph/50cc8005430703c4778902ab67a1ad8c48246949d06a1d0b86f5d8cc0d948158: device or resource busy
+[2016-08-18 11:05.31] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=2746a33fec1969db23536777a88cec0a --label com.docker.datakit.builton=1471518139.72 -t opamci:2746a33fec1969db23536777a88cec0a --no-cache --rm --force-rm --pull - < /tmp/tmp-1e8e4f9/Dockerfile" exited with status 1
