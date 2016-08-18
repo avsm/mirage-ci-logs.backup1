@@ -1,7 +1,1 @@
-ERR (debian-stable/4.02.3=Command "sh" "-c" "docker build -t opamci:eb6be1c0d6bc32a26b84ddc6e9d363d9 --no-cache --rm --force-rm --pull - < /tmp/tmp-333759c8/Dockerfile" exited with status 3)
-ERR (debian-testing/4.03.0=Command "sh" "-c" "docker build -t opamci:1e5deecaa20a952cf184db952d1b0e57 --no-cache --rm --force-rm --pull - < /tmp/tmp-1609d1d/Dockerfile" exited with status 3)
-ERR (ubuntu-16.04/4.02.3=Command "sh" "-c" "docker build -t opamci:4b092b966ad952eb75635059c625c0fd --no-cache --rm --force-rm --pull - < /tmp/tmp-129b505/Dockerfile" exited with status 3)
-ERR (opensuse-42.1/4.03.0=Command "sh" "-c" "docker build -t opamci:9f1869b673bf3df95ed70b61f77c9042 --no-cache --rm --force-rm --pull - < /tmp/tmp-24bcbdac/Dockerfile" exited with status 3)
-ERR (fedora-24/4.03.0=Command "sh" "-c" "docker build -t opamci:2b34e9da81e6da629d253dda70d57b76 --no-cache --rm --force-rm --pull - < /tmp/tmp-3f37fd3f/Dockerfile" exited with status 3)
-ERR (centos-7/4.03.0=Command "sh" "-c" "docker build -t opamci:c2bf2065b52b894f51d89af36a5026e8 --no-cache --rm --force-rm --pull - < /tmp/tmp-1020a328/Dockerfile" exited with status 3)
-ERR (alpine-3.4/4.03.0=Command "sh" "-c" "docker build -t opamci:ac1ab2a965757b3548290f6bce2ef812 --no-cache --rm --force-rm --pull - < /tmp/tmp-34b443e1/Dockerfile" exited with status 3)
+Building Dockerfile for mergable:558 (alpine-3.4/4.03.0)
