@@ -1,1 +1,1 @@
-ERR (debian-stable/4.03.0=Command "sh" "-c" "docker build -t opamci:bca88fc6fa55a944ca20bc65e25218a4 --no-cache --rm --force-rm --pull - < /tmp/tmp-1bd257f3/Dockerfile" exited with status 4)
+Building Dockerfile for minimal:414 (debian-stable/4.03.0)
