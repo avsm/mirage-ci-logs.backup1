@@ -1,0 +1,1 @@
+Command "sh" "-c" "docker build --label com.docker.datakit.digest=9f1869b673bf3df95ed70b61f77c9042 --label com.docker.datakit.builton=1471520808.92 -t opamci:9f1869b673bf3df95ed70b61f77c9042 --no-cache --rm --force-rm --pull - < /tmp/tmp-3d44cddd/Dockerfile" exited with status 3

@@ -1,0 +1,57 @@
+=== Building container 9f1869b673bf3df95ed70b61f77c9042
+[2016-08-18 11:02.20] Starting...
+[2016-08-18 11:02.20] Waiting for free pool slot to build 9f1869b673bf3df95ed70b61f77c9042
+[2016-08-18 11:46.48] Pool slot obtained, starting build of 9f1869b673bf3df95ed70b61f77c9042
+[2016-08-18 11:46.48] Building container for 9f1869b673bf3df95ed70b61f77c9042
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:opensuse-42.1_ocaml-4.03.0
+opensuse-42.1_ocaml-4.03.0: Pulling from ocaml/opam
+Digest: sha256:02a25f6d3a8fa21b4b62b75a69d7a4b01843def67253e7dffea9b571200e697e
+Status: Image is up to date for ocaml/opam:opensuse-42.1_ocaml-4.03.0
+ ---> 7eaa8b5ca0fe
+Step 2 : RUN git clone git://github.com/mirage/mirage /home/opam/src
+ ---> Running in 6e8b8fa66ed3
+[91mCloning into '/home/opam/src'...
+[0m ---> 3bc7803adb9a
+Removing intermediate container 6e8b8fa66ed3
+Step 3 : WORKDIR /home/opam/src
+ ---> Running in 9b937e8f6735
+ ---> 9c5152569b93
+Removing intermediate container 9b937e8f6735
+Step 4 : RUN git fetch origin pull/558/head:cibranch &&   git checkout cibranch &&   cat /etc/os-release || true &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage
+ ---> Running in e8717940329d
+[91mFrom git://github.com/mirage/mirage
+ * [new ref]         refs/pull/558/head -> cibranch
+[0m[91mSwitched to branch 'cibranch'
+[0mNAME="openSUSE Leap"
+VERSION="42.1"
+VERSION_ID="42.1"
+PRETTY_NAME="openSUSE Leap 42.1 (x86_64)"
+ID=opensuse
+ANSI_COLOR="0;32"
+CPE_NAME="cpe:/o:opensuse:opensuse:42.1"
+BUG_REPORT_URL="https://bugs.opensuse.org"
+HOME_URL="https://opensuse.org/"
+ID_LIKE="suse"
+mirage is now path-pinned to /home/opam/src
+
+[mirage: local]
+[mirage] /home/opam/src/ synchronized
+[mirage] Installing new package description from /home/opam/src
+
+# Detecting depexts using flags: x86_64 linux opensuse
+# No extra OS packages requirements found.
+
+=-=- Synchronising pinned packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[mirage: local] Command started
+[mirage] /home/opam/src/ already up-to-date
+The following dependencies couldn't be met:
+  - mirage -> mirage-types-lwt >= 3.0.0
+Your request can't be satisfied:
+  - No package matches mirage-types-lwt>=3.0.0.
+
+No solution found, exiting
+[91m'opam install -j 2 -vy mirage' failed.
+[0mRemoving intermediate container e8717940329d
+The command '/bin/sh -c git fetch origin pull/558/head:cibranch &&   git checkout cibranch &&   cat /etc/os-release || true &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage' returned a non-zero code: 3
+[2016-08-18 11:50.56] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=9f1869b673bf3df95ed70b61f77c9042 --label com.docker.datakit.builton=1471520808.92 -t opamci:9f1869b673bf3df95ed70b61f77c9042 --no-cache --rm --force-rm --pull - < /tmp/tmp-3d44cddd/Dockerfile" exited with status 3
