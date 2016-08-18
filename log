@@ -1,0 +1,11 @@
+=== Building Dockerfile for minimal:558 (debian-stable/4.03.0)
+[2016-08-18 14:24.38] Starting...
+[2016-08-18 14:24.38] Building Dockerfile for installing mirage (debian-stable 4.03.0)
+FROM ocaml/opam:debian-stable_ocaml-4.03.0
+RUN git clone git://github.com/mirage/mirage /home/opam/src
+WORKDIR /home/opam/src
+RUN git fetch origin pull/558/head:cibranch
+RUN git checkout 9f190fe4dd30c9aa6a09eb60f1cb3ede752806fa
+RUN opam pin add -n mirage /home/opam/src
+RUN opam depext -uy mirage
+RUN opam install -j 2 -vy mirage[2016-08-18 14:24.38] Success
