@@ -1,0 +1,11 @@
+=== Building Dockerfile for mergable:488 (opensuse-42.1/4.03.0)
+[2016-08-18 14:24.37] Starting...
+[2016-08-18 14:24.37] Building Dockerfile for installing cohttp (opensuse-42.1 4.03.0)
+FROM ocaml/opam:opensuse-42.1_ocaml-4.03.0
+RUN git clone git://github.com/mirage/ocaml-cohttp /home/opam/src
+WORKDIR /home/opam/src
+RUN git fetch origin pull/488/head:cibranch
+RUN git checkout d1027b86e13a4f3916486343cd02444c3038195e
+RUN opam pin add -n cohttp /home/opam/src
+RUN opam depext -uy cohttp
+RUN opam install -j 2 -vy cohttp[2016-08-18 14:24.37] Success
