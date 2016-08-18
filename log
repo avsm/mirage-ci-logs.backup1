@@ -1,0 +1,11 @@
+=== Building Dockerfile for mergable:573 (ubuntu-16.04/4.02.3)
+[2016-08-18 14:24.38] Starting...
+[2016-08-18 14:24.38] Building Dockerfile for installing mirage (ubuntu-16.04 4.02.3)
+FROM ocaml/opam:ubuntu-16.04_ocaml-4.02.3
+RUN git clone git://github.com/mirage/mirage /home/opam/src
+WORKDIR /home/opam/src
+RUN git fetch origin pull/573/head:cibranch
+RUN git checkout f918e6e50b18d2f2cb1ca8d6cebbd18c059cce5a
+RUN opam pin add -n mirage /home/opam/src
+RUN opam depext -uy mirage
+RUN opam install -j 2 -vy mirage[2016-08-18 14:24.38] Success
