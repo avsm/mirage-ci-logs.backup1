@@ -1,0 +1,91 @@
+=== Building container c2bf2065b52b894f51d89af36a5026e8
+[2016-08-18 11:02.20] Starting...
+[2016-08-18 11:02.20] Waiting for free pool slot to build c2bf2065b52b894f51d89af36a5026e8
+[2016-08-18 11:47.08] Pool slot obtained, starting build of c2bf2065b52b894f51d89af36a5026e8
+[2016-08-18 11:47.08] Building container for c2bf2065b52b894f51d89af36a5026e8
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:centos-7_ocaml-4.03.0
+centos-7_ocaml-4.03.0: Pulling from ocaml/opam
+Digest: sha256:51337b1053ad40d6b9fbc75afbb391d0eb521336de75224203d4444bf0fb0eb3
+Status: Image is up to date for ocaml/opam:centos-7_ocaml-4.03.0
+ ---> 73cc60d7eddb
+Step 2 : RUN git clone git://github.com/mirage/mirage /home/opam/src
+ ---> Running in ba78bb56133b
+Cloning into '/home/opam/src'...
+ ---> f761accbba89
+Removing intermediate container ba78bb56133b
+Step 3 : WORKDIR /home/opam/src
+ ---> Running in e79d2cc98319
+ ---> 7c09e4f24205
+Removing intermediate container e79d2cc98319
+Step 4 : RUN git fetch origin pull/558/head:cibranch &&   git checkout cibranch &&   cat /etc/os-release || true &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage
+ ---> Running in 2f19b977f428
+[91mFrom git://github.com/mirage/mirage
+ * [new ref]         refs/pull/558/head -> cibranch
+[0m[91mSwitched to branch 'cibranch'
+[0mNAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
+
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+
+mirage is now path-pinned to /home/opam/src
+
+[mirage: local]
+[mirage] /home/opam/src/ synchronized
+[mirage] Installing new package description from /home/opam/src
+
+# Detecting depexts using flags: x86_64 linux centos
+# The following system packages are needed:
+#  - m4
+Name        : m4
+Version     : 1.4.16
+Release     : 10.el7
+Architecture: x86_64
+Install Date: Mon Aug  8 16:36:25 2016
+Group       : Applications/Text
+Size        : 525707
+License     : GPLv3+
+Signature   : RSA/SHA256, Wed Nov 25 15:16:04 2015, Key ID 24c6a8a7f4a80eb5
+Source RPM  : m4-1.4.16-10.el7.src.rpm
+Build Date  : Fri Nov 20 07:28:07 2015
+Build Host  : worker1.bsys.centos.org
+Relocations : (not relocatable)
+Packager    : CentOS BuildSystem <http://bugs.centos.org>
+Vendor      : CentOS
+URL         : http://www.gnu.org/software/m4/
+Summary     : The GNU macro processor
+Description :
+A GNU implementation of the traditional UNIX macro processor.  M4 is
+useful for writing text files which can be logically parsed, and is used
+by many programs as part of their build process.  M4 has built-in
+functions for including files, running shell commands, doing arithmetic,
+etc.  The autoconf program needs m4 for generating configure scripts, but
+not for running configure scripts.
+
+Install m4 if you need a macro processor.
+# All required OS packages found.
+
+=-=- Synchronising pinned packages =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+[mirage: local] Command started
+[mirage] /home/opam/src/ already up-to-date
+The following dependencies couldn't be met:
+  - mirage -> mirage-types-lwt >= 3.0.0
+Your request can't be satisfied:
+  - No package matches mirage-types-lwt>=3.0.0.
+
+No solution found, exiting
+[91m'opam install -j 2 -vy mirage' failed.
+[0mRemoving intermediate container 2f19b977f428
+The command '/bin/sh -c git fetch origin pull/558/head:cibranch &&   git checkout cibranch &&   cat /etc/os-release || true &&   opam pin add -n mirage /home/opam/src &&   opam depext -uy mirage &&   opam install -j 2 -vy mirage' returned a non-zero code: 3
+[2016-08-18 11:51.46] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=c2bf2065b52b894f51d89af36a5026e8 --label com.docker.datakit.builton=1471520828.78 -t opamci:c2bf2065b52b894f51d89af36a5026e8 --no-cache --rm --force-rm --pull - < /tmp/tmp-fe0bf71/Dockerfile" exited with status 3
