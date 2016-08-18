@@ -1,0 +1,11 @@
+=== Building Dockerfile for mergable:440 (debian-stable/4.02.3)
+[2016-08-18 14:24.36] Starting...
+[2016-08-18 14:24.36] Building Dockerfile for installing cohttp (debian-stable 4.02.3)
+FROM ocaml/opam:debian-stable_ocaml-4.02.3
+RUN git clone git://github.com/mirage/ocaml-cohttp /home/opam/src
+WORKDIR /home/opam/src
+RUN git fetch origin pull/440/head:cibranch
+RUN git checkout cb96f69178b7d946ae2efa6109768159f01b9828
+RUN opam pin add -n cohttp /home/opam/src
+RUN opam depext -uy cohttp
+RUN opam install -j 2 -vy cohttp[2016-08-18 14:24.36] Success
