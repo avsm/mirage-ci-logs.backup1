@@ -1,1 +1,1 @@
-ERR (debian-stable/4.03.0=Command "sh" "-c" "docker build --label com.docker.datakit.digest=4270a7f8061155d808bc8fc5a400292e --label com.docker.datakit.builton=1471518551.33 -t opamci:4270a7f8061155d808bc8fc5a400292e --no-cache --rm --force-rm --pull - < /tmp/tmp-1f8ff6c4/Dockerfile" exited with status 4)
+ERR (1)
