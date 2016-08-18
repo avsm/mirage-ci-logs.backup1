@@ -1,0 +1,17 @@
+=== Building container 1322d03dbf9c4d0d6905ea8116b6dc0c
+[2016-08-18 14:24.39] Starting...
+[2016-08-18 14:24.39] Waiting for free pool slot to build 1322d03dbf9c4d0d6905ea8116b6dc0c
+[2016-08-18 14:24.39] Pool slot obtained, starting build of 1322d03dbf9c4d0d6905ea8116b6dc0c
+[2016-08-18 14:24.39] Building container for 1322d03dbf9c4d0d6905ea8116b6dc0c
+Sending build context to Docker daemon 2.048 kB
+Step 1 : FROM ocaml/opam:fedora-24_ocaml-4.03.0
+fedora-24_ocaml-4.03.0: Pulling from ocaml/opam
+Digest: sha256:9e3c19fa6493ae25a7013a8332e832d2567bdb24ec11eebf0e5531821e4d8680
+Status: Image is up to date for ocaml/opam:fedora-24_ocaml-4.03.0
+ ---> cafdb62f2d51
+Step 2 : RUN git clone git://github.com/mirage/ocaml-cohttp /home/opam/src
+ ---> Running in 8ccf712e5e27
+[91mCloning into '/home/opam/src'...
+[0mRemoving intermediate container 8ccf712e5e27
+error creating zfs mount of zpool-docker/docker/845b6f8a87775e2969c71c3eaf48d3a9daa19badb17520d32e7012936b670749 to /var/lib/docker/zfs/graph/845b6f8a87775e2969c71c3eaf48d3a9daa19badb17520d32e7012936b670749: device or resource busy
+[2016-08-18 14:25.07] Failed: Command "sh" "-c" "docker build --label com.docker.datakit.digest=1322d03dbf9c4d0d6905ea8116b6dc0c --label com.docker.datakit.builton=1471530279.03 -t opamci:1322d03dbf9c4d0d6905ea8116b6dc0c --no-cache --rm --force-rm --pull - < /tmp/tmp-35b0b89d/Dockerfile" exited with status 1
